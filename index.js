@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 const router = require("./router");
 
 io.on("connection", (socket) => {
-    console.log("New connection!", socket);
+    console.log("New connection has been successfully established", socket);
     socket.on("disconnect", () => {
         console.log("User left!");
     });
