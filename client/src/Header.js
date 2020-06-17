@@ -4,7 +4,7 @@ import "./Header.css";
 const Header = () => {
     return (
         <div className="Header">
-            <h2>Real-time Chat with React / socket.io</h2>
+            <h1>Real-time Chat with React / socket.io</h1>
         </div>
     );
 };
