@@ -6,6 +6,9 @@ import Header from "./Header";
 import "./App.css";
 
 const App = () => {
+    const [name, setName] = useState("");
+    const [room, setRoom] = useState("");
+
     return (
         <BrowserRouter>
             <Header />

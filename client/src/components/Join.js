@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import "./Join.css";
 
-const Join = () => {
-    const [name, setName] = useState("");
-    const [room, setRoom] = useState("");
-
+const Join = ({ name, room, setName, setRoom }) => {
     return (
         <div className="joinOuterContainer">
             <div className="joinInnerContainer">
@@ -30,10 +27,7 @@ const Join = () => {
                     />
                 </div>
                 {name && room && (
-                    <Link
-                        className="button mt-20"
-                        to={`/join?name=${name}&room=${room}`}
-                    >
+                    <Link className="button mt-20" to="/join">
                         Sign in
                     </Link>
                 )}
