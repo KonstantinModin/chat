@@ -28,11 +28,13 @@ const Join = ({ name, room, setName, setRoom }) => {
                         required
                     />
                 </div>
-                {name && room && (
-                    <Link className="button mt-20" to="/chat">
-                        Sign in
-                    </Link>
-                )}
+                <div>
+                    {name && room && (
+                        <Link className="button mt-20" to="/chat">
+                            Sign in
+                        </Link>
+                    )}
+                </div>
             </div>
         </div>
     );

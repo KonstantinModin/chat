@@ -6,6 +6,7 @@ import Header from "./Header";
 import "./App.css";
 
 const App = () => {
+    // application state
     const [name, setName] = useState("");
     const [room, setRoom] = useState("");
 
