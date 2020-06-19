@@ -10,6 +10,7 @@ const Join = ({ name, room, setName, setRoom }) => {
                 <h1 className="heading">Join</h1>
                 <div className="">
                     <input
+                        value={name}
                         type="text"
                         className="joinInput"
                         onChange={(e) => setName(e.target.value)}
@@ -19,6 +20,7 @@ const Join = ({ name, room, setName, setRoom }) => {
                 </div>
                 <div className="">
                     <input
+                        value={room}
                         type="text"
                         className="joinInput mt-20"
                         onChange={(e) => setRoom(e.target.value)}
@@ -27,7 +29,7 @@ const Join = ({ name, room, setName, setRoom }) => {
                     />
                 </div>
                 {name && room && (
-                    <Link className="button mt-20" to="/join">
+                    <Link className="button mt-20" to="/chat">
                         Sign in
                     </Link>
                 )}
