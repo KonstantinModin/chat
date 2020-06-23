@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../chat.jpg";
 
 import "./Join.css";
 
@@ -7,6 +8,7 @@ const Join = ({ name, room, setName, setRoom }) => {
     return (
         <div className="joinOuterContainer">
             <div className="joinInnerContainer">
+                <img src={logo} width="120" alt="logo" />
                 <h1 className="heading">Join</h1>
                 <div className="">
                     <input
