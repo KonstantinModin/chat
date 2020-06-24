@@ -2,6 +2,11 @@ import React from "react";
 import io from "socket.io-client";
 
 const Chat = ({ name, room }) => {
+    const endpoint = "localhost:5000";
+    const socket = io(endpoint);
+    socket.emit("join", { name, room });
+    console.log(socket);
+
     return (
         <div className="Chat">
             <h2>Chat</h2>
