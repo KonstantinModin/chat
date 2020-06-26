@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import io from "socket.io-client";
 
 const Chat = ({ name, room }) => {
-    const endpoint = "localhost:5000";
-    const socket = io(endpoint);
-    socket.emit("join", { name, room });
-    console.log(socket);
+    useEffect(() => {
+        const endpoint = "localhost:5000";
+        const socket = io(endpoint);
+        socket.emit("join", { name, room });
+        console.log(socket);
+
+        return () => {
+            socket.emit("disconnect");
+            socket.off();
+        };
+    }, [name, room]);
 
     return (
         <div className="Chat">
