@@ -1,4 +1,4 @@
-const users = [];
+let users = [];
 
 const removeWhiteSpaceAndLowerCase = (s) => s.replace(/ /g, "").toLowerCase();
 
@@ -11,11 +11,18 @@ const addUser = ({ id, name, room }) => {
     );
 
     if (existingUser) return { error: "Username is taken" };
-    users.push({ id, name, room });
+
+    const user = { id, name, room };
+    users.push(user);
+    return user;
 };
 
-const removeUser = (id) => users.filter((user) => user.id !== id);
+const removeUser = (id) => {
+    users = users.filter((user) => user.id !== id);
+};
 
 const getUser = (id) => users.find((user) => user.id === id);
 
 const getUsersInRoom = (room) => users.filter((user) => user.room === room);
+
+module.exports = { addUser, removeUser, getUser, getUsersInRoom };
